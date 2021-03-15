@@ -1,0 +1,117 @@
+<app-header></app-header>
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name" required>
+            <div class="alert alert-danger" *ngIf="!name.valid && name.touched"> Please enter name </div>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" formControlName="email" class="form-control">
+            <div class="alert alert-danger" *ngIf="!email.valid && email.touched"> Please enter email </div>
+
+          </div>
+
+          <div class="form-group col-12">
+            <label for="passwrod" class="form-label">Password</label>
+            <input type="text" formControlName="password" class="form-control">
+            <div class="alert alert-danger" *ngIf="!password.valid && password.touched"> Please enter password </div>
+
+          </div>
+
+          <div class="form-group col-12">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="text" formControlName="mobile" class="form-control">
+            <div class="alert alert-danger" *ngIf="!mobile.valid && mobile.touched"> Please enter mobile number </div>
+          </div>
+
+          <div class="form-group col-12">
+            <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary ml-2">Cancel</button>
+          </div>
+          <!--
+              Form val:{{signupForm.value |json}}
+            form status: {{signupForm.valid}}
+
+  -->
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<span style ="color: red;" *ngIf=!signupForm.get('name').valid> Please enter name </span>
+ <div class="alert alert-danger">Enter Email</div>
+--!>
+
+
+
+
+
+
+
+<!--
+<div class="card">
+  <div class="card-body">
+    <main class="form-signin">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" NgModel name="inputEmail4" >
+          <div class="alert alert-danger">Enter Email</div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" NgModel name="inputPassword4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputName4" class="form-label">First Name</label>
+          <input type="password" class="form-control" id="inputName4" NgModel name="inputName4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputLast4" class="form-label">Last Name</label>
+          <input type="password" class="form-control" id="inputLast4" Ngmodel name="inputLast4">
+        </div>
+        
+
+          <div class="col-md-6">
+            <br>
+            <button type="submit" class="w-10 btn btn-lg btn-primary">Sign up</button>
+          
+        </div>
+        
+        </form>
+    </main>
+  </div>
+</div>
+
+
+  *ngIf="!inputEmail4.touched && !inputEmail4.valid "
+-->
